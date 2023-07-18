@@ -1,0 +1,153 @@
+/* === Aplicando CSS de forma global === */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Aplicando CSS al encabezado === */
+#logo{
+    width: 4%;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#logo h3{
+    position: fixed;
+    top: 15px;
+    left: 60px;
+    color: #000;
+}
+#encabezado{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(239, 245, 245, .95); /* #EFF5F5 en rgb tiene los valores 239, 245, 245. Se utiliza rgba para dejar una pequeña transparecia en el menú del encabezado. */
+    z-index: 5;
+}
+#listaOpciones{
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+}
+#listaOpciones li{
+    scroll-margin-bottom: 100px;
+}
+#menuOpciones{
+    width: 50%;
+}
+#menuOpciones li a{
+    position: relative;
+    color: #00425A;
+}
+#menuOpciones li a::after{
+    content: '';
+    width: 0%;
+    background-color: #00425A;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: all 0.5s;
+}
+#menuOpciones li a:hover::after{
+    width: 100%;
+}
+
+/* === Aplicando CSS al body === */
+/* === Banner === */
+#subtituloBanner{
+    font-family: 'Pangolin', cursive;
+    position: absolute;
+    top: 145px;
+    color: #FFF;
+    font-size: x-large;
+    text-align: center;
+}
+/* === Secciones === */
+#nosotros, #elegirnos, #propuesta{
+    margin-top: -7px; /* Para unirlo a la img */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nosotros div p, #propuesta div p{
+    padding: 10px 0px;
+    float: left;
+    width: 60%;
+    margin-left: 25px
+}
+#nosotros div img, #propuesta div img{
+    padding: 10px 0px;
+    float: right;
+    width: 15%;
+    margin-right: 25px;
+}
+#elegirnos div ul li{
+    padding: 10px 0px;
+    float: right;
+    width: 60%;
+    margin-right: 25px;
+    list-style-type: disc;
+}
+#elegirnos div img{
+    padding: 10px 0px;
+    float: left;
+    width: 15%;
+    margin-left: 25px;
+}
+.encabezadoSeccion{
+    padding-left: 20px;
+    background-color: #1F8A70;
+    color: #FFF;
+}
+/* === Noticias === */
+.noticia{
+    width: 30%;
+    display: inline-table;
+    margin: 5px 15px 100px;
+}
+.noticia img{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.noticia h3{
+    text-decoration: underline;
+}
+
+/* === Aplicando CSS al footer === */
+footer{
+    background-color: #181823;
+    color: #FC7300;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+}
+#nombreEscuela, #contacto h2{
+    font-size: large;
+    text-align: center;
+}
+#contacto table tbody tr td a{
+    color: #FC7300;
+    text-decoration: underline;
+    padding: 0px 2px;
+}
+#redes ul li a{
+    color: #FC7300;
+}
+#redes ul li a:hover{
+    text-decoration: underline;
+}
