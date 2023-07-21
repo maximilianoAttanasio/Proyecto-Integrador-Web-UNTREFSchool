@@ -1,153 +1,178 @@
 /* === Aplicando CSS de forma global === */
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-img{
+img {
     width: 100%;
 }
-ul{
+ul {
     list-style-type: none;
 }
-a{
+a {
     text-decoration: none;
 }
-body{
+body {
     font-family: 'Poppins', sans-serif;
 }
 
 /* === Aplicando CSS al encabezado === */
-#logo{
-    width: 4%;
-    padding-top: 10px;
-    padding-left: 10px;
+.bg-customNavegacion{
+    background-color: #eff5f5; /* Para utlizar un color específico en la barra de inicio */
 }
-#logo h3{
-    position: fixed;
-    top: 15px;
-    left: 60px;
-    color: #000;
+
+/* === Secciones === */
+.encabezadoSeccion {
+    padding: 2px 25px;
+    background-color: #1f8a70;
+    color: #fff;
 }
-#encabezado{
-    display: flex;
-    position: fixed;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(239, 245, 245, .95); /* #EFF5F5 en rgb tiene los valores 239, 245, 245. Se utiliza rgba para dejar una pequeña transparecia en el menú del encabezado. */
-    z-index: 5;
+
+/* === Aplicando CSS a la sección de noticias === */
+.noticia h3 {
+    text-decoration: underline;
 }
-#listaOpciones{
-    display: flex;
-    justify-content: space-around;
-    font-size: small;
+.card-body{
+    padding: 20px;
+    background-color: #f5f5f5;
 }
-#listaOpciones li{
-    scroll-margin-bottom: 100px;
-}
-#menuOpciones{
-    width: 50%;
-}
-#menuOpciones li a{
-    position: relative;
-    color: #00425A;
-}
-#menuOpciones li a::after{
-    content: '';
-    width: 0%;
-    background-color: #00425A;
-    height: 1px;
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    transition: all 0.5s;
-}
-#menuOpciones li a:hover::after{
+.row{
     width: 100%;
 }
 
-/* === Aplicando CSS al body === */
-/* === Banner === */
-#subtituloBanner{
-    font-family: 'Pangolin', cursive;
-    position: absolute;
-    top: 145px;
-    color: #FFF;
-    font-size: x-large;
-    text-align: center;
-}
-/* === Secciones === */
-#nosotros, #elegirnos, #propuesta{
-    margin-top: -7px; /* Para unirlo a la img */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-#nosotros div p, #propuesta div p{
-    padding: 10px 0px;
-    float: left;
-    width: 60%;
-    margin-left: 25px
-}
-#nosotros div img, #propuesta div img{
-    padding: 10px 0px;
-    float: right;
-    width: 15%;
-    margin-right: 25px;
-}
-#elegirnos div ul li{
-    padding: 10px 0px;
-    float: right;
-    width: 60%;
-    margin-right: 25px;
-    list-style-type: disc;
-}
-#elegirnos div img{
-    padding: 10px 0px;
-    float: left;
-    width: 15%;
-    margin-left: 25px;
-}
-.encabezadoSeccion{
-    padding-left: 20px;
-    background-color: #1F8A70;
-    color: #FFF;
-}
-/* === Noticias === */
-.noticia{
-    width: 30%;
-    display: inline-table;
-    margin: 5px 15px 100px;
-}
-.noticia img{
-    width: 50%;
-    display: block;
-    margin: 0 auto;
-}
-.noticia h3{
-    text-decoration: underline;
-}
-
 /* === Aplicando CSS al footer === */
-footer{
+footer {
+    text-align: center;
     background-color: #181823;
     color: #FC7300;
+}
+#nombreEscuela, #contacto h2, #redes h2 {
+    padding: 15px 0px;
+}
+#datos a, #redes ul li a {
+    color: #FC7300;
+}
+#redes ul {
     display: flex;
-    justify-content: space-between;
-    padding: 15px 50px;
+    justify-content: space-evenly;
 }
-#nombreEscuela, #contacto h2{
-    font-size: large;
-    text-align: center;
+#botonInicio a ion-icon{
+    position: fixed;
+    color: black;
+    border-radius: 50%;
+    background-color: rgba(211, 211, 211, .5);
 }
-#contacto table tbody tr td a{
-    color: #FC7300;
-    text-decoration: underline;
-    padding: 0px 2px;
+
+/*=== Aplicando comportamiento resposive o adaptativo===*/
+/* Small devices (767 and below) */
+@media (max-width: 767px) {
+    /* === Aplicando CSS al body === */
+    /* === Secciones === */
+    #nosotros div p, #propuesta div p, .noticias {
+        padding: 0px 0px 3px;
+        margin: 0px 25px 20px;
+    }
+    #elegirnos div ul li {
+        padding: 0px 0px 3px;
+        margin: 0px 25px 5px;
+        list-style-type: disc;
+    }
+    #nosotros div img, #propuesta div img, #elegirnos div img, .noticia img {
+        width: 30%;
+        display: block;
+        margin: 0px auto;
+    }
+
+    /* === Noticias === */
+    .noticia {
+        margin: 15px 15px 30px;
+    }
+
+    /* === Aplicando CSS al footer === */
+    footer {
+        padding-bottom: 15px;
+    }
+    #nombreEscuela, #contacto h2, #redes h4 {
+        font-size: 1.2rem; /*19,2px*/
+    }
+    #redes ul {
+        font-size: 2.5rem; /*40px*/
+    }
+    #datos p {
+        font-size: 1.2rem; /*19,2px*/
+    }
+    #botonInicio a ion-icon{
+        font-size: 3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
 }
-#redes ul li a{
-    color: #FC7300;
-}
-#redes ul li a:hover{
-    text-decoration: underline;
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    /* === Aplicando CSS al body === */
+    /* === Secciones === */
+    #nosotros, #elegirnos, #propuesta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #nosotros div p, #propuesta div p {
+        float: left;
+        width: 60%;
+        padding: 5px 0px;
+        margin: 0px 25px 5px;
+    }
+    #nosotros div img, #propuesta div img {
+        padding: 10px 0px;
+        float: right;
+        width: 15%;
+        margin-right: 25px;
+    }
+    #elegirnos div ul li {
+        float: right;
+        width: 60%;
+        list-style-type: disc;
+        padding: 4px 0px;
+        margin: 0px 25px 5px;
+    }
+    #elegirnos div img {
+        padding: 10px 0px;
+        float: left;
+        width: 15%;
+        margin-left: 25px;
+    }
+
+    /* === Noticias === */
+    .noticia{
+        margin: 20px 10px 100px;
+    }
+    .noticia img {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* === Aplicando CSS al footer === */
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #redes ul {
+        font-size: 2rem; /*24px*/
+    }
+    #datos p, #nombreEscuela p {
+        font-size: 1rem; /*16px*/
+    }
+    #datos p a {
+        text-decoration: underline;
+    }
+    #botonInicio a ion-icon{
+        font-size: 3rem;
+        bottom: 50px;
+        right: 50px;
+    }
+
 }
